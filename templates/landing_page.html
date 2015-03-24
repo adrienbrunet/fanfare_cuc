@@ -53,32 +53,30 @@
    
 
 </body>
-    <script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
-    <script src="{% static 'js/jquery-ui-1.11.0/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'js/jquery-1.11.1.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/jquery-ui-1.11.0/jquery-ui.min.js' %}" type="text/javascript"></script>
     <script src="{% static 'js/wScratchPad.min.js' %}" type="text/javascript"></script>
     <script src="{% static 'js/konami.min.js' %}" type="text/javascript"></script>
     <script type="text/javascript">
-        $('#demo1').wScratchPad({
-            bg: "{% static 'images/transparent.png' %}",
-            fg: "{% static 'images/caca.png' %}",
-            cursor: 'url("{% static 'images/coin.png' %}") 20 20, default',
-            size: 50,
-          scratchMove: function (e, percent) {
-            if (percent > 15){
-                $('.scratchpad').wScratchPad('reset');
-                $('#scratch').hide();
-            }
-          }
-        });
-    </script>
-    <script>
-        $('#scratch').hide();
-          $( window ).konami({
-            cheat: function() {
-                $('#scratch').show();
-                $('.scratchpad').wScratchPad('reset');
-            }
-        });
+	$('#demo1').wScratchPad({
+	  bg: "{% static 'images/transparent.png' %}",
+	  fg: "{% static 'images/caca.png' %}",
+	  cursor: 'url("{% static 'images/coin.png' %}") 20 20, default',
+	  size: 50,
+	  scratchMove: function (e, percent) {
+	    if (percent > 20){
+	      $('.scratchpad').wScratchPad('reset');
+	      $('#scratch').hide();
+	    }
+	  }
+	});
+	$('#scratch').hide();
+	$( window ).konami({
+	  cheat: function() {
+	    $('#scratch').show();
+	    $('.scratchpad').wScratchPad('reset');
+	  }
+	});
     </script>
 
 </html>

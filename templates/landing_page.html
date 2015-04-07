@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Fanfare CUC - Chaos par UpperCuite</title>
+    <title>Fanfare CUC - La Fanfare de Paris</title>
     <meta http-equiv="Content-Language" content="fr">
     <meta name="author" content="Adrien Brunet">
     <meta name="Revisit-After" content="1 days">
-    <meta name="keywords" lang="fr" content="fanfare, festival, paris, CUC, cuc, chaos, uppercuite, farigoule">
+    <meta name="keywords" lang="fr" content="fanfare, Paris, festival, paris, CUC, cuc, chaos, uppercuite, farigoule, brass, parisienne">
     {% load staticfiles %}    
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
     
@@ -43,7 +43,11 @@
     <tr>
       <td>
         <a href="https://fr-fr.facebook.com/fanfare.CUC" title="Facebook">
+	{% if today.date > concert_10_avril.date %}
           <img src="{% static 'images/logo.png' %}">
+	{% else %}
+          <img style="width:30%;" src="{% static 'images/affiche_10_avril_2015.jpg' %}">
+        {% endif %}
         </a>
       </td>
     </tr>

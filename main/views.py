@@ -14,4 +14,6 @@ class LandingPage(TemplateView):
         context = super(LandingPage, self).get_context_data(**kwargs)
         context['today'] = datetime.now()
         context['concert_10_avril'] = datetime(2015, 4, 11)
+        context['LTDC15'] = datetime(2015, 9, 4)
+        context['endLTDC15'] = datetime(2015, 9, 8)
         return context

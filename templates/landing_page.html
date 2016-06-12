@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="fr" dir="ltr"a>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Fanfare CUC - La Fanfare de Paris</title>
@@ -7,9 +7,8 @@
     <meta name="author" content="Adrien Brunet">
     <meta name="Revisit-After" content="1 days">
     <meta name="keywords" lang="fr" content="fanfare, Paris, festival, paris, CUC, cuc, chaos, uppercuite, farigoule, brass, parisienne">
-    {% load staticfiles %}    
+    {% load staticfiles %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
-
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -26,12 +25,14 @@
       <div id="demo1" class="scratchpad"></div>
     </div>
 
-    <div id="icones"> 
-      <a href="mailto:fanfare.cuc@gmail.com" title="Contact"> <img src="{% static 'images/mail.png' %}" alt="Contact gmail"></a> 
+
+    <div id="icones">
+      <a href="mailto:fanfare.cuc@gmail.com" title="Contact"> <img src="{% static 'images/mail.png' %}" alt="Contact gmail"></a>
       <a href="https://fr-fr.facebook.com/fanfare.CUC" title="Facebook"> <img src="{% static 'images/fb.png' %}" alt="Notre facebook"></a>
       <a href="https://twitter.com/fanfarecuc" title="Twitter"> <img src="{% static 'images/twitter.png' %}" alt="twitter"></a>
       <a href="https://www.youtube.com/channel/UCAs--7zpoqXc0XdNKISU82g" title="Youtube"> <img src="{% static 'images/yt.png' %}" alt="youtube"></a>
       <a href="https://plus.google.com/115854707373485316599" title="Google+"> <img src="{% static 'images/gg.png' %}" alt="google"></a>
+      <p style="padding:0 25px 0 25px; color:white;"><b style="font-size: 1.4em">Recrutez nous !</b><br> Animations extérieures, événements sportifs (tournois, marathons),<br>soirées bars, ouvertures magasins...<br><br>fanfare.cuc@gmail.com</p>
     </div>
 
     <table id="wrapper">
@@ -39,13 +40,12 @@
         <tr>
           <td>
             <a href="https://fr-fr.facebook.com/fanfare.CUC" title="Facebook">
-    	        {% if today.date == concert_10_avril.date %}
-                <img style="width:30%;" src="{% static 'images/affiche_10_avril_2015.jpg' %}">
-              {% elif LTDC15 < today.date < endLTDC15 %}
-                <img src="{% static 'images/LTDC15.jpg' %}">
-              {% else %}
-                <img src="{% static 'images/logo.png' %}">
-              {% endif %}
+              <img src="{% static 'images/logo.png' %}">
+            </a>
+          </td>
+          <td>
+            <a href="http://game.fanfare-cuc.fr">
+              <img src="{% static 'images/cucgame.png' %}">
             </a>
           </td>
         </tr>

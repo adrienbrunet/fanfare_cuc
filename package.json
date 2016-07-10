@@ -4,6 +4,8 @@
   "description": "Site de la fanfare CUC",
   "main": "index.js",
   "dependencies": {
+    "bootstrap": "^3.3.6",
+    "jquery.1": "^1.0.0"
   },
   "devDependencies": {},
   "scripts": {

@@ -1,6 +1,11 @@
+html {
+}
+
 body {
   background-color: #25408f !important;
   height: 100%;
+  font-family: 'Lemonada', cursive !important;
+  font-size: 24;
 }
 
 .give-me-space {
@@ -34,7 +39,7 @@ body {
   padding: 25px 25px 25px 25px;
   color:white;
   background-color: black;
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 .presentation-text b {

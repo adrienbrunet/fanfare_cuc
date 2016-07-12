@@ -17,3 +17,7 @@ class LandingPage(TemplateView):
         context['LTDC15'] = datetime(2015, 9, 4)
         context['endLTDC15'] = datetime(2015, 9, 8)
         return context
+
+
+class TourPulignyView(TemplateView):
+    template_name = 'puligny.html'

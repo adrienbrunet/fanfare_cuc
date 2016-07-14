@@ -7,6 +7,7 @@ from datetime import datetime
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
 
+
 class LandingPage(TemplateView):
     template_name = 'landing_page.html'
 
@@ -21,3 +22,7 @@ class LandingPage(TemplateView):
 
 class TourPulignyView(TemplateView):
     template_name = 'puligny.html'
+
+
+class PresentationView(TemplateView):
+    template_name = 'presentation.html'

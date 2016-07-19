@@ -18,4 +18,4 @@ branches:
     - master
   
 # command to run tests
-script: $MIGRATE && ./manage.py test 
+script: pushd . && $MIGRATE && ./manage.py test && popd

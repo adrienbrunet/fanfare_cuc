@@ -1,7 +1,9 @@
 # fanfare_cuc
 Fanfare cuc website (Chaos par UpperCuite)
 
-fanfare-cuc.fr
+[![Build Status](https://travis-ci.org/adrienbrunet/fanfare_cuc.svg?branch=master)](https://travis-ci.org/adrienbrunet/fanfare_cuc)
+
+[See website here](http://fanfare-cuc.fr)
 
 This contains the source code for the CUC website.
 Any comment is welcome.

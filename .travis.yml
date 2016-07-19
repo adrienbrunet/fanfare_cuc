@@ -6,7 +6,7 @@ python:
   - "nightly" # currently points to 3.6-dev
 
 env:
-  - DJANGO=1.9 MIGRATE='./manage.py migrate'
+  - DJANGO=1.9 MIGRATE='python manage.py migrate'
 
 # command to install dependencies
 install:

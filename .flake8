@@ -1,0 +1,12 @@
+[flake8]
+exclude =
+    .tox,
+    .venv,
+    */migrations/*,
+    settings.py,
+    manage.py,
+    wsgi.py
+max-line-length = 120
+
+# E12x continuation line indentation
+ignore = E12

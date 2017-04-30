@@ -3,6 +3,7 @@ psycopg2
 django-assets
 pytest
 pytest-django
+pytest-flake8
 pytest-cov
 closure
 yuicompressor

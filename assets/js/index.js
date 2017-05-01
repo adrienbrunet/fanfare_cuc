@@ -1,9 +1,5 @@
 var $ = require("jquery");
 
-
-// Initialize player and register event handler
-var Player = new MidiPlayer.Player();
-
 var playTrack = function (filename, pk) {
   // Load a MIDI file
   MIDIjs.stop();
@@ -18,3 +14,7 @@ var pauseTrack = function (pk) {
   $("play-" + pk).show();
 }
 
+export default {
+    playTrack: playTrack,
+    pauseTrack: pauseTrack
+};

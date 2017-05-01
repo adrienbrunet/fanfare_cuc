@@ -14,7 +14,7 @@ var pauseTrack = function (pk) {
   $("play-" + pk).show();
 }
 
-export default {
+module.exports = {
     playTrack: playTrack,
     pauseTrack: pauseTrack
 };

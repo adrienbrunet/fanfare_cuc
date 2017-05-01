@@ -76,6 +76,24 @@
   </body>
   <script type='text/javascript' src='//www.midijs.net/lib/midi.js'></script>
   <script src="https://use.fontawesome.com/7d07b7ead1.js"></script>
-  {% render_bundle 'main' 'js' %}
+  <script
+        src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+        crossorigin="anonymous"></script>
+  <script>
+    var playTrack = function (filename, pk) {
+      // Load a MIDI file
+      MIDIjs.stop();
+      MIDIjs.play(filename);
+      $("#play-" + pk).hide();
+      $("pause-" + pk).show();
+    }
+
+    var pauseTrack = function (pk) {
+      MIDIjs.stop();
+      $("pause-" + pk).hide();
+      $("play-" + pk).show();
+    }
+  </script>
 
 </html>

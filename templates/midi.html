@@ -86,13 +86,13 @@
       MIDIjs.stop();
       MIDIjs.play(filename);
       $("#play-" + pk).hide();
-      $("pause-" + pk).show();
+      $("#pause-" + pk).show();
     }
 
     var pauseTrack = function (pk) {
       MIDIjs.stop();
-      $("pause-" + pk).hide();
-      $("play-" + pk).show();
+      $("#pause-" + pk).hide();
+      $("#play-" + pk).show();
     }
   </script>
 

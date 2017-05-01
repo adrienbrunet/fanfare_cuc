@@ -22,12 +22,11 @@ class QuestionPage(models.Model):
     with some response
     """
     slug = models.SlugField(max_length=255)
+    start_date = models.DateField()
+    end_date = models.DateField()
     answers = ArrayField(models.CharField(max_length=1024, blank=True))
-    expiration_date = models.DateField(blank=True, null=True)
-    answers_expired = ArrayField(
-        models.CharField(max_length=1024, blank=True),
-        blank=True,
-        null=True)
+    answers_before = ArrayField(models.CharField(max_length=1024, blank=True))
+    answers_expired = ArrayField(models.CharField(max_length=1024, blank=True))
 
     def __str__(self):
         return self.slug

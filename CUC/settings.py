@@ -150,3 +150,4 @@ ASSETS_DEBUG = DEBUG is True
 ASSETS_AUTO_BUILD = DEBUG is True
 
 MEDIA_URL = '/media/'
+MEDIA_ROOT = 'media'

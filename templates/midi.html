@@ -62,8 +62,10 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12 col-xs-12">
+          <p style="font-size: 12pt;color: white;">Après avoir cliquer sur play, il faut parfois attendre plusieurs secondes, le temps que le fichier midi charge...</p>
+          <br>
           {% for track in object_list %}
-            <p style="font-size: 12pt;color: white;"><button id="play-{{ track.pk }}" onclick="playTrack('{{ track.midi_file.url }}', {{ track.pk }});return false;"><span class="fa fa-play"></span></button><button id="pause-{{ track.pk }}" style="display: none;" onclick="pauseTrack({{ track.pk }}); return false;"><span class="fa fa-pause"></span></button><span>{{ track.title }}</span></p>
+            <p style="font-size: 12pt;color: white;"><button id="play-{{ track.pk }}" onclick="playTrack('{{ track.midi_file.url }}', {{ track.pk }});return false;" style="color: black;"><span class="fa fa-play"></span></button><button id="pause-{{ track.pk }}" style="display: none;" onclick="pauseTrack({{ track.pk }}); return false;" style="color: black;"><span class="fa fa-pause"></span></button><span> &nbsp{{ track.title }}</span></p>
           {% endfor %}
         </div>
       </div>

@@ -82,8 +82,14 @@
         integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
         crossorigin="anonymous"></script>
   <script>
+    var currentTrack;
     var playTrack = function (filename, pk) {
       // Load a MIDI file
+      if (currentTrack) {
+        $("#pause-" + currentTrack).hide();
+        $("#play-" + currentTrack).show();
+      }
+      currentTrack = pk;
       MIDIjs.stop();
       MIDIjs.play(filename);
       $("#play-" + pk).hide();

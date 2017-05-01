@@ -18,7 +18,7 @@ class StaticPageTest(TestCase):
         assert response.status_code == 200
         assert 'presentation.html' in [t.name for t in response.templates]
 
-    def test_question(self):
+    def test_question_view(self):
         now = datetime.now()
         question = QuestionPage.objects.create(
             slug="hard-test",
@@ -32,3 +32,9 @@ class StaticPageTest(TestCase):
         assert response.status_code == 200
         assert "answer" in response.context
         assert 'question_page.html' in [t.name for t in response.templates]
+
+    def test_question_view_raise_404_with_wrong_url(self):
+        url = reverse('question', kwargs={"slug": "bad-test"})
+        response = self.client.get(url)
+        assert response.status_code == 404
+        assert "answer" not in response.context

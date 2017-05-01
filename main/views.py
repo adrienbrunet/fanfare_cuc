@@ -3,6 +3,7 @@
 from datetime import date
 import random
 
+from django.shortcuts import get_object_or_404
 from django.views.generic.base import TemplateView
 from django.views.generic.list import ListView
 
@@ -27,7 +28,7 @@ class QuestionPageView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        question_page = QuestionPage.objects.get(slug=kwargs["slug"])
+        question_page = get_object_or_404(QuestionPage, slug=kwargs["slug"])
         today = date.today()
 
         answers = question_page.get_answers(today)

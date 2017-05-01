@@ -34,7 +34,7 @@ class QuestionPage(models.Model):
     def get_answers(self, date):
         if date < self.start_date:
             return self.answers_before
-        elif date < self.end_date:
+        elif date <= self.end_date:
             return self.answers
         else:
             return self.answers_expired

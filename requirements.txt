@@ -10,5 +10,5 @@ yuicompressor
 factory_boy
 psycopg2
 gunicorn
-
+django-webpack-loader
 

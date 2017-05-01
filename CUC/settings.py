@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main'
+    'main',
+    'webpack_loader',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -135,7 +136,15 @@ STATIC_ROOT = root('static_prod')
 STATICFILES_DIRS = (
     root('static'),
     root('node_modules'),
+    root('assets'),
 )
+
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'BUNDLE_DIR_NAME': 'bundles/',
+        'STATS_FILE': os.path.join(BASE_DIR, '.webpack-stats.json'),
+    }
+}
 
 
 ASSETS_VERSIONS = 'hash:32'
@@ -149,4 +158,3 @@ ASSETS_URL_EXPIRE = False
 ASSETS_DEBUG = DEBUG is True
 
 ASSETS_AUTO_BUILD = DEBUG is True
-

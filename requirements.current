@@ -3,6 +3,7 @@ closure==20161201
 coverage==4.3.4
 Django==1.11
 django-assets==0.12
+django-webpack-loader==0.4.1
 factory-boy==2.8.1
 fake-factory==0.5.7
 Faker==0.7.11

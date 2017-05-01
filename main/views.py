@@ -2,6 +2,9 @@
 
 
 from django.views.generic.base import TemplateView
+from django.views.generic.list import ListView
+
+from .models import Track
 
 
 class LandingPage(TemplateView):
@@ -14,3 +17,8 @@ class TourPulignyView(TemplateView):
 
 class PresentationView(TemplateView):
     template_name = 'presentation.html'
+
+
+class MidiView(ListView):
+    model = Track
+    template_name = 'midi.html'

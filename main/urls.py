@@ -16,4 +16,7 @@ urlpatterns = [
     url(r'^est-ce-que-cest-bientot-(?P<slug>[-\w]+)/$',
         views.QuestionPageView.as_view(),
         name="question"),
+    url(r'click-and-drag/$',
+        views.ClickAndDragView.as_view(),
+        name="click-and-drag"),
 ]

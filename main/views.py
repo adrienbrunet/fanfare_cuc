@@ -35,3 +35,7 @@ class QuestionPageView(TemplateView):
         random.shuffle(answers)
         context["answer"] = answers[0]
         return context
+
+
+class ClickAndDragView(TemplateView):
+    template_name = "click_and_drag.html"

@@ -1,0 +1,39 @@
+{% for event in events %}
+  <article class="card">
+    <div class="card-header">
+      <div class="card-header-title">
+        <p class="title">
+          {{ event.title }}
+          <br>
+          <span class="subtitle">{{ event.date }} · {{ event.location }}</span>
+        </p>
+      </div>
+    </div>
+    <div class="card-content">
+      <div class="content">
+        {{ event.description }}
+      </div>
+    </div>
+  </article>
+  <br>
+{% empty %}
+  <article class="card">
+    <div class="card-header">
+      <div class="card-header-title">
+        <p class="title">
+          Pas de dates prévues
+        </p>
+      </div>
+    </div>
+    <div class="card-content">
+      <div class="content">
+        <p>Revenez vite pour suivre nos actualités ou n'hésitez pas à nous recruter.</p>
+        <br>
+        <p>
+          <a href="mailto:fanfare.cuc@gmail.com" class="button is-danger is-outlined"><i class="fas fa-envelope"></i>&nbsp;<span class="is-hidden-mobile">Contact · </span>fanfare.cuc@gmail.com</a>
+          <a href="https://fr-fr.facebook.com/fanfare.CUC" class="button is-danger is-outlined"><i class="fab fa-facebook"></i>&nbsp;<span class="is-hidden-mobile">Facebook CUC</a>
+        </p>
+      </div>
+    </div>
+  </article>
+{% endfor %}

@@ -1,0 +1,98 @@
+{% load static %}
+<nav class="navbar is-dark is-fixed-top">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="{% url 'landing_page' %}">
+        <img src="{% static 'images/logo_small.png' %}" alt="logo du CUC">
+      </a>
+      <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div id="navbarExampleTransparentExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="{% url 'presentation' %}">
+          Nos bouilles
+        </a>
+        <a class="navbar-item" href="{% url 'events' %}">
+          Dates
+        </a>
+        <a class="navbar-item" href="https://game.fanfare-cuc.fr">
+          Game
+        </a>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="field is-grouped">
+            <p class="control">
+              <a href="mailto:fanfare.cuc@gmail.com" title="Contact mail" class="button is-danger">
+                <span class="icon">
+                  <i class="fas fa-envelope"></i>
+                </span>
+              </a>
+            </p>
+            <p class="control">
+              <a class="button is-danger" href="https://fr-fr.facebook.com/fanfare.CUC" title="Compte facebook du CUC">
+                <span class="icon">
+                  <i class="fab fa-facebook"></i>
+                </span>
+              </a>
+            </p>
+            <p class="control">
+              <a class="button is-danger" href="https://twitter.com/fanfarecuc" title="Compte twitter du CUC">
+                <span class="icon">
+                  <i class="fab fa-twitter"></i>
+                </span>
+              </a>
+            </p>
+            <p class="control">
+              <a class="button is-danger" href="https://www.youtube.com/channel/UCAs--7zpoqXc0XdNKISU82g" title="Compte youtube du CUC">
+                <span class="icon">
+                  <i class="fab fa-youtube"></i>
+                </span>
+              </a>
+            </p>
+            <p class="control">
+              <a class="button is-danger" href="https://plus.google.com/115854707373485316599" title="Compte Google+ du CUC">
+                <span class="icon">
+                  <i class="fab fa-google-plus-g"></i>
+                </span>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  // Get all "navbar-burger" elements
+  var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+  // Check if there are any navbar burgers
+  if ($navbarBurgers.length > 0) {
+
+    // Add a click event on each of them
+    $navbarBurgers.forEach(function ($el) {
+      $el.addEventListener('click', function () {
+
+        // Get the target from the "data-target" attribute
+        var target = $el.dataset.target;
+        var $target = document.getElementById(target);
+
+        // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+        $el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+
+      });
+    });
+  }
+
+});
+</script>

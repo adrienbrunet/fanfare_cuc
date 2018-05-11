@@ -1,22 +1,42 @@
-from django.conf.urls import url
+from django.urls import path, re_path
 
 from . import views
 
 
 urlpatterns = [
-    url(r'^$',
+    path(
+        '',
         views.LandingPage.as_view(),
-        name='landing_page'),
-    url(r'^presentation/$',
+        name='landing_page'
+    ),
+    path(
+        'presentation/',
         views.PresentationView.as_view(),
-        name="presentation"),
-    url(r'^midi/$',
+        name="presentation"
+    ),
+    path(
+        'midi/',
         views.MidiView.as_view(),
-        name="midi"),
-    url(r'^est-ce-que-cest-bientot-(?P<slug>[-\w]+)/$',
+        name="midi"
+    ),
+    re_path(
+        r'^est-ce-que-cest-bientot-(?P<slug>[-\w]+)/$',
         views.QuestionPageView.as_view(),
-        name="question"),
-    url(r'click-and-drag/$',
+        name="question"
+    ),
+    path(
+        'click-and-drag/',
         views.ClickAndDragView.as_view(),
-        name="click-and-drag"),
+        name="click-and-drag"
+    ),
+    path(
+        'events/',
+        views.EventListView.as_view(),
+        name="events"
+    ),
+    path(
+        'events/<int:pk>/',
+        views.EventDetailView.as_view(),
+        name="event_detail"
+    ),
 ]

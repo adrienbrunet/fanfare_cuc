@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero is-medium is-danger is-bold">
+  <div class="container hero-body">
+    <h1 class="title">Toutes les dates du ♥♥ CUC ♥♥</h1>
+  </div>
+</section>
+<section class="hero is-bold">
+  <div class="container hero-body">
+    {% include "partial_event_list.html" with events=object_list %}
+  </div>
+</section>
+{% endblock content %}

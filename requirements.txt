@@ -11,4 +11,4 @@ factory_boy
 psycopg2
 gunicorn
 django-webpack-loader
-
+Pillow

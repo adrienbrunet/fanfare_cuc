@@ -1,9 +1,9 @@
 from datetime import datetime
 
-from django.core.urlresolvers import reverse
 from django.test import TestCase
+from django.urls import reverse
 
-from ..models import QuestionPage
+from ..models import Event, QuestionPage
 
 
 class StaticPageTest(TestCase):
@@ -38,3 +38,20 @@ class StaticPageTest(TestCase):
         response = self.client.get(url)
         assert response.status_code == 404
         assert "answer" not in response.context
+
+    def test_events_list(self):
+        url = reverse('events')
+        response = self.client.get(url)
+        assert response.status_code == 200
+
+    def test_event_detail(self):
+        event = Event(
+            title="foo",
+            description="foo",
+            date=datetime.now(),
+            location="bar"
+        )
+        event.save()
+        url = reverse('event_detail', kwargs={'pk': event.pk})
+        response = self.client.get(url)
+        assert response.status_code == 200

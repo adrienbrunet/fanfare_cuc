@@ -2,7 +2,7 @@ import datetime
 
 from django.test import TestCase
 
-from ..models import QuestionPage, Track
+from ..models import Event, QuestionPage, Track
 
 
 class TrackTest(TestCase):
@@ -34,3 +34,14 @@ class QuestionpageTest(TestCase):
         assert question.get_answers(yesterday) == ["bar"]
         assert question.get_answers(tomorrow) == ["foo"]
         assert question.get_answers(two_years_after) == ["baz"]
+
+
+class EventTest(TestCase):
+    def test_str(self):
+        event = Event(
+            title="foo",
+            description="foo",
+            date=datetime.datetime.now(),
+            location="bar"
+        )
+        assert str(event) == "foo"

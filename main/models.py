@@ -13,6 +13,8 @@ class Track(models.Model):
 
     class Meta:
         ordering = ["title", ]
+        verbose_name = 'Morceau'
+        verbose_name_plural = 'Morceaux'
 
     def __str__(self):
         return self.title
@@ -41,3 +43,19 @@ class QuestionPage(models.Model):
             return self.answers
         else:
             return self.answers_expired
+
+
+class Event(models.Model):
+    title = models.CharField(max_length=255)
+    date = models.DateField()
+    description = models.TextField()
+    location = models.CharField(max_length=255)
+    image = models.ImageField(blank=True, null=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        ordering = ('-date', )
+        verbose_name = 'Evenement'
+        verbose_name_plural = 'Evenements'

@@ -2,7 +2,7 @@ from django import forms
 from django.contrib import admin
 from django.contrib.postgres.forms import SplitArrayField
 
-from .models import QuestionPage, Track
+from .models import Event, QuestionPage, Track
 
 
 class QuestionPageForm(forms.ModelForm):
@@ -28,5 +28,12 @@ class QuestionPageAdmin(admin.ModelAdmin):
     form = QuestionPageForm
 
 
+class EventAdmin(admin.ModelAdmin):
+    list_display = ('__str__', 'title', 'description', 'date', 'location', 'image')
+    list_editable = ('title', 'description', 'date', 'location', 'image')
+    list_filter = ('date', 'location')
+
+
+admin.site.register(Event, EventAdmin)
 admin.site.register(QuestionPage, QuestionPageAdmin)
 admin.site.register(Track)

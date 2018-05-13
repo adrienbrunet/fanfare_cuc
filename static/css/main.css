@@ -21,9 +21,9 @@ body {
 }
 
 .section {
-  background-color: #25408f !important;
+  background: linear-gradient(to right, #25408f, #257095);
 }
 
 section {
-  background-color: #25408f !important;
+  background: linear-gradient(to right, #25408f, #057095);
 }

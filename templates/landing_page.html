@@ -23,7 +23,7 @@
           Animations extérieures, événements sportifs, soirées bars, ouvertures magasins...
         </h3>
         <br>
-        <a href="mailto:fanfare.cuc@gmail.com" class="button is-light is-outlined"><i class="fas fa-envelope"></i>&nbsp;<span class="is-hidden-mobile">Contact · </span>fanfare.cuc@gmail.com</a>
+        <a href="mailto:fanfare.cuc@gmail.com" class="button is-light is-outlined"><i class="fas fa-envelope"></i>&nbsp;<span class="is-hidden-mobile">Contact :&nbsp;</span>fanfare.cuc@gmail.com</a>
       </div>
       <div class="column is-hidden-mobile"></div>
       <div class="is-hidden-tablet"><br><br></div>
@@ -40,9 +40,9 @@
     <div class="container">
       <div class="columns">
         <div class="column">
-          <h1 class="title"><i class="fas fa-calendar"></i>&nbsp;Les prochaines dates</h1>
+          <h1 class="title"><i class="fas fa-calendar"></i>&nbsp;Les prochains concerts</h1>
           <h2 class="subtitle">
-            Dans l'attente de <a href="{% url 'events' %}">nos concerts</a>, jouez au jeu du CUC !
+            Venez nous voir en direct ! <u><a href="{% url 'events' %}">Voir toutes les dates</a></u>
           </h2>
           {% include "partial_event_list.html" with events=events %}
         </div>

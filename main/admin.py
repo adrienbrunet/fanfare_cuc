@@ -2,7 +2,15 @@ from django import forms
 from django.contrib import admin
 from django.contrib.postgres.forms import SplitArrayField
 
+from import_export import resources
+from import_export.admin import ImportExportModelAdmin
+
 from .models import Event, QuestionPage, Track
+
+
+class BookResource(resources.ModelResource):
+    class Meta:
+        model = Event
 
 
 class QuestionPageForm(forms.ModelForm):
@@ -28,9 +36,15 @@ class QuestionPageAdmin(admin.ModelAdmin):
     form = QuestionPageForm
 
 
-class EventAdmin(admin.ModelAdmin):
-    list_display = ('__str__', 'title', 'description', 'date', 'location', 'image')
-    list_editable = ('title', 'description', 'date', 'location', 'image')
+class EventAdmin(ImportExportModelAdmin):
+    list_display = (
+        '__str__', 'title', 'description', 'date', 'displayed_date',
+        'location', 'event_url'
+    )
+    list_editable = (
+        'title', 'description', 'date', 'displayed_date',
+        'location', 'event_url'
+    )
     list_filter = ('date', 'location')
 
 

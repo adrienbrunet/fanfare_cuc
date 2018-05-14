@@ -8,14 +8,14 @@
           <p class="title" style="font-size:1.5rem;">
             {% firstof event.displayed_date event.date|date:"l d F"|title %} ·  <span style="color: #888">{{ event.title }}</span>
             <br>
-            <span class="subtitle">{{ event.location }}</span>
+            <span class="subtitle">{{ event.location }}{% if event.city  %} · {{ event.city }}{% endif %} </span>
           </p>
         </div>
       </div>
       <div class="card-content">
         <div class="content">
           {% if event.description %}
-            <p>{{ event.description }}</p>
+            <p>{{ event.description|safe }}</p>
           {% endif %}
           {% if event.event_url %}
             <p><a href="{{ event.event_url }}"><span class="fas fa-external-link-alt"></span> Page de l'event</a></p>

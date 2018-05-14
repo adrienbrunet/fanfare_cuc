@@ -39,13 +39,13 @@ class QuestionPageAdmin(admin.ModelAdmin):
 class EventAdmin(ImportExportModelAdmin):
     list_display = (
         '__str__', 'title', 'description', 'date', 'displayed_date',
-        'location', 'event_url'
+        'location', 'city', 'event_url'
     )
     list_editable = (
         'title', 'description', 'date', 'displayed_date',
-        'location', 'event_url'
+        'location', 'city', 'event_url'
     )
-    list_filter = ('date', 'location')
+    list_filter = ('date', 'location', 'city')
 
 
 admin.site.register(Event, EventAdmin)

@@ -49,7 +49,7 @@ class Event(models.Model):
     title = models.CharField(max_length=255)
     date = models.DateField()
     displayed_date = models.CharField(max_length=255, blank=True)
-    description = models.TextField()
+    description = models.TextField(blank=True)
     location = models.CharField(max_length=255, blank=True)
     city = models.CharField(max_length=255, blank=True)
     event_url = models.URLField(blank=True, null=True)

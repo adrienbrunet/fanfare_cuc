@@ -4,15 +4,12 @@
   {% for event in events_list.list %}
     <article class="has-text-white tooltip" data-tooltip-content="#tooltip_content-{{ event.pk }}">
       {% firstof event.displayed_date event.date|date:"l d F"|title %} · <span class="has-text-danger">{{ event.title }}</span>{% if event.location %}
-       · <span class="has-text-white">{{ event.location }}{% endif %}{% if event.city  %} · {{ event.city }}{% endif %} </span>
+       · <span class="has-text-white">{{ event.location }}{% endif %}{% if event.city  %} · {{ event.city }}{% endif %} {% if event.event_url %}<a href="{{ event.event_url }}" class="has-text-white"><span class="fas fa-external-link-alt"></span> Page de l'event</a>{% endif %}</span>
       <div>
       <div class="tooltip_templates">
         <span id="tooltip_content-{{ event.pk }}">
           {% if event.description %}
             {{ event.description|safe }}<br>
-          {% endif %}
-          {% if event.event_url %}
-            <a href="{{ event.event_url }}" class="has-text-white"><span class="fas fa-external-link-alt"></span> Page de l'event</a>
           {% endif %}
         </span>
       </div>

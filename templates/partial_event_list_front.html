@@ -2,7 +2,7 @@
 {% for events_list in events_by_year %}
   {% for event in events_list.list reversed %}
     <div class="tooltip-{{ event.pk }}">
-      {% firstof event.displayed_date event.date|date:"l d F"|title %} · <span class="has-text-danger">{{ event.title }}</span>{% if event.location %}
+      <span class="has-text-weight-semibold">{% firstof event.displayed_date event.date|date:"l d F"|title %}</span> · <span class="has-text-danger">{{ event.title }}</span>{% if event.location %}
        · <span>{{ event.location }}{% endif %}{% if event.city  %} · {{ event.city }}{% endif %}{% if event.event_url %}
           <p><a href="{{ event.event_url }}" class="has-text-white"><span class="fas fa-external-link-alt has-text-danger"></span></a></p> </span>
         {% endif %}

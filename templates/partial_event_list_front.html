@@ -1,0 +1,33 @@
+{% regroup events by date|date:"Y" as events_by_year %}
+{% for events_list in events_by_year %}
+  {% for event in events_list.list reversed %}
+    <div class="tooltip-{{ event.pk }}">
+      {% firstof event.displayed_date event.date|date:"l d F"|title %} · <span class="has-text-danger">{{ event.title }}</span>{% if event.location %}
+       · <span>{{ event.location }}{% endif %}{% if event.city  %} · {{ event.city }}{% endif %} </span>
+      <!-- <div class="description">
+        {% if event.description %}
+          <p>{{ event.description|safe }}</p>
+        {% endif %}
+        {% if event.event_url %}
+          <p><a href="{{ event.event_url }}" class="has-text-white"><span class="fas fa-external-link-alt"></span> Page de l'event</a></p>
+        {% endif %}
+      </div> -->
+      <br>
+    </div>
+    <script>
+      $( document ).ready(function() {
+        console.log($('.tooltip-{{ event.pk }}'));
+        $('.tooltip-{{ event.pk }}').tooltip({
+          content: "Awesome title!"
+        });
+      });
+    </script>
+    <br>
+  {% empty %}
+    Oops
+  {% endfor %}
+  <br>
+{% endfor %}
+
+
+

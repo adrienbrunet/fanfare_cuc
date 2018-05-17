@@ -27,3 +27,5 @@ body {
 section {
   background: linear-gradient(to right, #25408f, #057095);
 }
+
+.tooltip_templates { display: none; }

@@ -2,48 +2,27 @@
 {% for events_list in events_by_year %}
   <h1 class="title has-text-white">{{ events_list.grouper }}</h1>
   {% for event in events_list.list %}
-    <article class="card">
-      <div class="card-header">
-        <div class="card-header-title">
-          <p class="title" style="font-size:1.5rem;">
-            {% firstof event.displayed_date event.date|date:"l d F"|title %} ·  <span style="color: #888">{{ event.title }}</span>
-            <br>
-            <span class="subtitle">{{ event.location }}{% if event.city  %} · {{ event.city }}{% endif %} </span>
-          </p>
-        </div>
-      </div>
-      <div class="card-content">
-        <div class="content">
+    <article class="has-text-white tooltip" data-tooltip-content="#tooltip_content-{{ event.pk }}">
+      {% firstof event.displayed_date event.date|date:"l d F"|title %} · <span class="has-text-danger">{{ event.title }}</span>{% if event.location %}
+       · <span class="has-text-white">{{ event.location }}{% endif %}{% if event.city  %} · {{ event.city }}{% endif %} </span>
+      <div>
+      <div class="tooltip_templates">
+        <span id="tooltip_content-{{ event.pk }}">
           {% if event.description %}
-            <p>{{ event.description|safe }}</p>
+            {{ event.description|safe }}<br>
           {% endif %}
           {% if event.event_url %}
-            <p><a href="{{ event.event_url }}"><span class="fas fa-external-link-alt"></span> Page de l'event</a></p>
+            <a href="{{ event.event_url }}" class="has-text-white"><span class="fas fa-external-link-alt"></span> Page de l'event</a>
           {% endif %}
-
-        </div>
+        </span>
       </div>
+      <br>
     </article>
-    <br>
   {% empty %}
-    <article class="card">
-      <div class="card-header">
-        <div class="card-header-title">
-          <p class="title">
-            Pas de dates prévues
-          </p>
-        </div>
-      </div>
-      <div class="card-content">
-        <div class="content">
-          <p>Revenez vite pour suivre nos actualités ou n'hésitez pas à nous recruter.</p>
-          <br>
-          <p>
-            <a href="mailto:fanfare.cuc@gmail.com" class="button is-danger is-outlined"><i class="fas fa-envelope"></i>&nbsp;<span class="is-hidden-mobile">Contact · </span>fanfare.cuc@gmail.com</a>
-            <a href="https://fr-fr.facebook.com/fanfare.CUC" class="button is-danger is-outlined"><i class="fab fa-facebook"></i>&nbsp;<span class="is-hidden-mobile">Facebook CUC</a>
-          </p>
-        </div>
-      </div>
-    </article>
+    Oops
   {% endfor %}
+  <br>
 {% endfor %}
+
+
+

@@ -35,7 +35,7 @@
     </div>
   </div>
 </section>
-<section class="section hero is-small is-bold is-light">
+<section class="section hero is-small is-bold is-white">
   <div class="hero-body">
     <div class="container">
       <div class="columns">
@@ -44,7 +44,7 @@
           <h2 class="subtitle">
             Venez nous voir en direct ! <u><a href="{% url 'events' %}">Voir toutes les dates</a></u>
           </h2>
-          {% include "partial_event_list.html" with events=events %}
+          {% include "partial_event_list_front.html" with events=events %}
         </div>
       </div>
     </div>

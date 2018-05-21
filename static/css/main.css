@@ -28,4 +28,11 @@ section {
   background: linear-gradient(to right, #25408f, #057095);
 }
 
-.tooltip_templates { display: none; }
+.event-entry {
+  padding-bottom: .5rem;
+  cursor: pointer;
+}
+
+.hide-event-description {
+  display: none;
+}

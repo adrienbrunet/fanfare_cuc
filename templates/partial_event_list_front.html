@@ -1,33 +1,19 @@
 {% regroup events by date|date:"Y" as events_by_year %}
 {% for events_list in events_by_year %}
   {% for event in events_list.list reversed %}
-    <div class="tooltip-{{ event.pk }}">
-      <span class="has-text-weight-semibold">{% firstof event.displayed_date event.date|date:"l d F"|title %}</span> · <span class="has-text-danger">{{ event.title }}</span>{% if event.location %}
-       · <span>{{ event.location }}{% endif %}{% if event.city  %} · {{ event.city }}{% endif %}{% if event.event_url %}
-          <p><a href="{{ event.event_url }}" class="has-text-white"><span class="fas fa-external-link-alt has-text-danger"></span></a></p> </span>
-        {% endif %}
-      <!-- <div class="description">
-        {% if event.description %}
-          <p>{{ event.description|safe }}</p>
-        {% endif %}
-
-      </div> -->
-      <br>
-    </div>
-    <script>
-      $( document ).ready(function() {
-        console.log($('.tooltip-{{ event.pk }}'));
-        $('.tooltip-{{ event.pk }}').tooltip({
-          content: "Awesome title!"
-        });
-      });
-    </script>
-    <br>
+    <article class="event-entry toggle-event" data-event-pk="{{ event.pk }}">
+      <div>
+        <span class="fas fa-plus icon-event-{{ event.pk }}"></span> <span class="has-text-weight-semibold">{% firstof event.displayed_date event.date|date:"l d F"|title %}</span> · <span class="has-text-danger">{{ event.title }}</span>{% if event.location %}
+         · <span>{{ event.location }}{% endif %}{% if event.city  %} · {{ event.city }}{% endif %}{% if event.event_url %} <a href="{{ event.event_url }}" class="has-text-white"><span class="fas fa-external-link-alt has-text-danger"></span></a>{% endif %}</span>
+        <div class="hide-event-description know-more-{{ event.pk }}">
+          {% if event.description %}
+            {{ event.description|safe }}<br>
+          {% endif %}
+        </div>
+      </div>
+    </article>
   {% empty %}
-    Oops
+    Oops, pas de date en vue pour le moment !
   {% endfor %}
   <br>
 {% endfor %}
-
-
-

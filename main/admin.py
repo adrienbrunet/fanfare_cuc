@@ -5,7 +5,7 @@ from django.contrib.postgres.forms import SplitArrayField
 from import_export import resources
 from import_export.admin import ImportExportModelAdmin
 
-from .models import Event, QuestionPage, Track
+from .models import Event, People, QuestionPage, Track
 
 
 class BookResource(resources.ModelResource):
@@ -50,4 +50,5 @@ class EventAdmin(ImportExportModelAdmin):
 
 admin.site.register(Event, EventAdmin)
 admin.site.register(QuestionPage, QuestionPageAdmin)
+admin.site.register(People)
 admin.site.register(Track)

@@ -55,10 +55,25 @@ class Event(models.Model):
     event_url = models.URLField(blank=True, null=True)
     image = models.ImageField(blank=True, null=True)
 
-    def __str__(self):
-        return self.title
-
     class Meta:
         ordering = ('-date', )
         verbose_name = 'Evenement'
         verbose_name_plural = 'Evenements'
+
+    def __str__(self):
+        return self.title
+
+
+class People(models.Model):
+    name = models.CharField(max_length=255)
+    description = models.TextField(blank=True)
+    photo = models.ImageField(blank=True, null=True)
+    is_dead = models.BooleanField(default=False)
+
+    class Meta:
+        verbose_name = "Personne"
+        verbose_name_plural = "Personnes"
+        ordering = ('name', )
+
+    def __str__(self):
+        return self.name

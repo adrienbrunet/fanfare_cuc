@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <section class="hero is-small is-danger is-bold">
+    <div class="container hero-body">
+      <h1 class="title">Le répertoire du <span class="fas fa-heart"></span> CUC <span class="fas fa-heart"></span></h1>
+    </div>
+  </section>
+  <section class="hero is-bold">
+    <div class="container hero-body">
+      {% for track in object_list %}
+        <p class="has-text-white" style="padding-bottom: .5rem;">{{ track.title }}</p>
+      {% endfor %}
+    </div>
+  </section>
+{% endblock content %}

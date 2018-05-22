@@ -9,7 +9,7 @@ from django.views.generic.base import TemplateView
 from django.views.generic.list import ListView
 from django.views.generic import DetailView
 
-from .models import Event, QuestionPage, Track
+from .models import Event, QuestionPage, People, Track
 
 
 class LandingPage(TemplateView):
@@ -22,8 +22,14 @@ class LandingPage(TemplateView):
         return context
 
 
-class PresentationView(TemplateView):
+class PresentationView(ListView):
+    model = People
     template_name = 'presentation.html'
+
+
+class SetListView(ListView):
+    model = Track
+    template_name = 'setlist.html'
 
 
 class MidiView(ListView):

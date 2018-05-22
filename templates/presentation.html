@@ -8,6 +8,11 @@
     </div>
   </section>
   <section class="hero is-bold">
+    {% for people in object_list %}
+      <img src="{{ people.photo }}" alt="{{ people.name }}">
+    {% endfor %}
+  </section>
+  <section class="hero is-bold">
     <div class="container hero-body">
       <div class="tile is-ancestor">
         <div class="tile is-parent">

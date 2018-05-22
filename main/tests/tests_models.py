@@ -2,7 +2,7 @@ import datetime
 
 from django.test import TestCase
 
-from ..models import Event, QuestionPage, Track
+from ..models import Event, People, QuestionPage, Track
 
 
 class TrackTest(TestCase):
@@ -45,3 +45,11 @@ class EventTest(TestCase):
             location="bar"
         )
         assert str(event) == "foo"
+
+
+class PeopleTest(TestCase):
+    def test_str(self):
+        people = People(
+            name="foo",
+        )
+        assert str(people) == "foo"

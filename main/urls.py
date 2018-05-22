@@ -19,6 +19,11 @@ urlpatterns = [
         views.MidiView.as_view(),
         name="midi"
     ),
+    path(
+        'repertoire/',
+        views.SetListView.as_view(),
+        name="setlist"
+    ),
     re_path(
         r'^est-ce-que-cest-bientot-(?P<slug>[-\w]+)/$',
         views.QuestionPageView.as_view(),

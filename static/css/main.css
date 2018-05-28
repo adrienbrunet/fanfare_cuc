@@ -109,3 +109,20 @@ section {
 .unskew-content.front {
   color: white;
 }
+
+.setlist-elt {
+  padding-bottom: .5rem;
+  padding-right: .5rem;
+  margin-right: .5rem;
+  margin-left: .5rem;
+  display: inline-block;
+}
+
+.alternate-setlist-elt {
+  background-color: #ff0561;
+}
+
+.fullheight {
+  height: 100%;
+  min-height: 100%;
+}

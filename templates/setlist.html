@@ -7,11 +7,13 @@
       <h1 class="title">Le répertoire du <span class="fas fa-heart"></span> CUC <span class="fas fa-heart"></span></h1>
     </div>
   </section>
-  <section class="hero is-bold">
+  <section class="hero is-bold is-large fullheight">
     <div class="container hero-body">
-      {% for track in object_list %}
-        <p class="has-text-white" style="padding-bottom: .5rem;">{{ track.title }}</p>
-      {% endfor %}
+      {% spaceless %}
+        {% for track in object_list %}
+          <div class="has-text-white skew-background setlist-elt {% cycle '' 'alternate-setlist-elt' %}"><div class="unskew-content {% cycle '' 'leaning-white-content' %}">{{ track.title }}</div></div>{% if not forloop.last %}<strong class="has-text-white">·</strong>{% endif %}
+        {% endfor %}
+      {% endspaceless %}
     </div>
   </section>
 {% endblock content %}

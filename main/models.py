@@ -10,6 +10,7 @@ class Track(models.Model):
     """
     title = models.CharField(max_length=255)
     midi_file = models.FileField()
+    is_discarded = models.BooleanField(default=False)
 
     class Meta:
         ordering = ["title", ]

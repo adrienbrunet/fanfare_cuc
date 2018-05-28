@@ -28,7 +28,7 @@ class PresentationView(ListView):
 
 
 class SetListView(ListView):
-    model = Track
+    queryset = Track.objects.filter(is_discarded=False)
     template_name = 'setlist.html'
 
 

@@ -166,7 +166,7 @@ section {
 }
 
 .figure-container:hover img {
-  transform: scale(1.15);
+  transform: scale(1.05);
 }
 
 figure {
@@ -185,4 +185,5 @@ figcaption {
   display: block;
   background: #ccc;
   transition: transform .2s ease-in-out;
+  z-index: 100;
 }

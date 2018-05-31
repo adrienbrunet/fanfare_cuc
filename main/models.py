@@ -1,6 +1,8 @@
 from django.contrib.postgres.fields import ArrayField
 from django.db import models
 
+from .choices import INSTRUMENTS
+
 
 class Track(models.Model):
     """
@@ -70,6 +72,7 @@ class People(models.Model):
     description = models.TextField(blank=True)
     photo = models.ImageField(blank=True, null=True)
     is_dead = models.BooleanField(default=False)
+    instrument = models.CharField(max_length=255, choices=INSTRUMENTS)
 
     class Meta:
         verbose_name = "Personne"

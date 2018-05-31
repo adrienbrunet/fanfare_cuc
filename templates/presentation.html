@@ -8,9 +8,20 @@
     </div>
   </section>
   <section class="hero is-bold">
-    {% for people in object_list %}
-      <img src="{{ people.photo }}" alt="{{ people.name }}">
-    {% endfor %}
+    <div class="container hero-body">
+      <div class="img-container">
+        {% for people in object_list %}
+          <div class="figure-container">
+            <figure>
+              <img class="img-circle" src="{{ people.photo.url }}" alt="{{ people.name }}">
+              <figcaption class="has-text-white">
+                {{ people.get_instrument_display }}
+              </figcaption>
+            </figure>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
   </section>
   <section class="hero is-bold">
     <div class="container hero-body">

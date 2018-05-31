@@ -9,17 +9,40 @@
   </section>
   <section class="hero is-bold">
     <div class="container hero-body">
+      <h2>Membres actifs</h2>
       <div class="img-container">
         {% for people in object_list %}
-          <div class="figure-container">
-            <figure>
-              <img class="img-circle" src="{{ people.photo.url }}" alt="{{ people.name }}">
-              <figcaption class="has-text-white has-text-centered">
-                <p>{{ people.name }}</p>
-                <p>{{ people.get_instrument_display }}</p>
-              </figcaption>
-            </figure>
-          </div>
+          {% if not people.is_dead %}
+            <div class="figure-container">
+              <figure>
+                <img class="img-circle" src="{{ people.photo.url }}" alt="{{ people.name }}">
+                <figcaption class="has-text-white has-text-centered">
+                  <p>{{ people.name }}</p>
+                  <p>{{ people.get_instrument_display }}</p>
+                </figcaption>
+              </figure>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <section class="hero is-bold">
+    <div class="container hero-body">
+      <h2>Hall of fame</h2>
+      <div class="img-container">
+        {% for people in object_list %}
+          {% if people.is_dead %}
+            <div class="figure-container">
+              <figure>
+                <img class="img-circle" src="{{ people.photo.url }}" alt="{{ people.name }}">
+                <figcaption class="has-text-white has-text-centered">
+                  <p>{{ people.name }}</p>
+                  <p>{{ people.get_instrument_display }}</p>
+                </figcaption>
+              </figure>
+            </div>
+          {% endif %}
         {% endfor %}
       </div>
     </div>

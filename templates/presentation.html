@@ -9,7 +9,7 @@
   </section>
   <section class="hero is-bold">
     <div class="container hero-body">
-      <h2 class="title">Membres actifs</h2>
+      <h2 class="title has-text-white">Membres actifs</h2>
       <div class="img-container">
         {% for people in object_list %}
           {% if not people.is_dead %}
@@ -29,7 +29,7 @@
   </section>
   <section class="hero is-bold">
     <div class="container hero-body">
-      <h2 class="title">Hall of fame</h2>
+      <h2 class="title  has-text-white">Hall of fame</h2>
       <div class="img-container">
         {% for people in object_list %}
           {% if people.is_dead %}
@@ -44,168 +44,6 @@
             </div>
           {% endif %}
         {% endfor %}
-      </div>
-    </div>
-  </section>
-  <section class="hero is-bold">
-    <div class="container hero-body">
-      <div class="tile is-ancestor">
-        <div class="tile is-parent">
-          <article class="tile is-child">
-            <img src="{% static 'images/prez/pres_bavette.png' %}" style="width: 100%; height:100%">
-          </article>
-        </div>
-        <div class="tile is-parent">
-          <article class="tile is-child">
-            <img src="{% static 'images/prez/pres_medor.png' %}" style="width: 100%; height:100%">
-          </article>
-        </div>
-        <div class="tile is-parent">
-          <article class="tile is-child">
-            <img src="{% static 'images/prez/pres_phiniwn.png' %}" style="width: 100%; height:100%">
-          </article>
-        </div>
-        <div class="tile is-parent">
-          <article class="tile is-child">
-            <img src="{% static 'images/prez/pres_chapon.png' %}" style="width: 100%; height:100%">
-          </article>
-        </div>
-      </div>
-
-      <div class="tile is-ancestor">
-        <div class="tile is-parent">
-          <article class="tile is-child">
-            <img src="{% static 'images/prez/pres_couscous.png' %}" style="width: 100%; height:100%">
-          </article>
-        </div>
-        <div class="tile is-parent">
-          <article class="tile is-child">
-            <img src="{% static 'images/prez/pres_prairy.png' %}" style="width: 100%; height:100%">
-          </article>
-        </div>
-        <div class="tile is-parent">
-          <article class="tile is-child">
-            <img src="{% static 'images/prez/pres_pituite.png' %}" style="width: 100%; height:100%">
-          </article>
-        </div>
-        <div class="tile is-parent">
-          <article class="tile is-child">
-            <img src="{% static 'images/prez/pres_maitresse.png' %}" style="width: 100%; height:100%">
-          </article>
-        </div>
-      </div>
-
-      <div class="tile is-ancestor">
-        <div class="tile is-parent">
-          <article class="tile is-child">
-            <img src="{% static 'images/prez/pres_chawee.png' %}" style="width: 100%; height:100%">
-          </article>
-        </div>
-        <div class="tile is-parent">
-          <article class="tile is-child">
-            <img src="{% static 'images/prez/pres_boliane.png' %}" style="width: 100%; height:100%">
-          </article>
-        </div>
-        <div class="tile is-parent">
-          <article class="tile is-child">
-            <img src="{% static 'images/prez/pres_gsm.png' %}" style="width: 100%; height:100%">
-          </article>
-        </div>
-        <div class="tile is-parent">
-          <article class="tile is-child">
-            <img src="{% static 'images/prez/pres_ielo.png' %}" style="width: 100%; height:100%">
-          </article>
-        </div>
-      </div>
-
-      <div class="tile is-ancestor">
-        <div class="tile is-parent">
-          <article class="tile is-child">
-            <img src="{% static 'images/prez/pres_antigel.png' %}" style="width: 100%; height:100%">
-          </article>
-        </div>
-        <div class="tile is-parent">
-          <article class="tile is-child">
-            <img src="{% static 'images/prez/pres_brazik.png' %}" style="width: 100%; height:100%">
-          </article>
-        </div>
-        <div class="tile is-parent">
-          <article class="tile is-child">
-            <img src="{% static 'images/prez/pres_koudboul.png' %}" style="width: 100%; height:100%">
-          </article>
-        </div>
-        <div class="tile is-parent">
-          <article class="tile is-child">
-            <img src="{% static 'images/prez/pres_rufa.png' %}" style="width: 100%; height:100%">
-          </article>
-        </div>
-      </div>
-
-      <div class="tile is-ancestor">
-        <div class="tile is-parent">
-          <article class="tile is-child">
-            <img src="{% static 'images/prez/pres_K.png' %}" style="width: 100%; height:100%">
-          </article>
-        </div>
-        <div class="tile is-parent">
-          <article class="tile is-child">
-            <img src="{% static 'images/prez/pres_neutron.png' %}" style="width: 100%; height:100%">
-          </article>
-        </div>
-        <div class="tile is-parent">
-          <article class="tile is-child">
-            <img src="{% static 'images/prez/pres_kapok.png' %}" style="width: 100%; height:100%">
-          </article>
-        </div>
-        <div class="tile is-parent">
-          <article class="tile is-child">
-            <img src="{% static 'images/prez/pres_tg.png' %}" style="width: 100%; height:100%">
-          </article>
-        </div>
-      </div>
-
-      <div class="tile is-ancestor">
-        <div class="tile is-parent">
-          <article class="tile is-child">
-            <img src="{% static 'images/prez/pres_frotie.png' %}" style="width: 100%; height:100%">
-          </article>
-        </div>
-        <div class="tile is-parent">
-          <article class="tile is-child">
-            <img src="{% static 'images/prez/pres_zlip.png' %}" style="width: 100%; height:100%">
-          </article>
-        </div>
-        <div class="tile is-parent">
-          <article class="tile is-child">
-          <img src="{% static 'images/prez/pres_thobbite.png' %}" style="width: 100%; height:100%">
-          </article>
-        </div>
-        <div class="tile is-parent">
-          <article class="tile is-child">
-            <img src="{% static 'images/prez/pres_menon.png' %}" style="width: 100%; height:100%">
-          </article>
-        </div>
-      </div>
-
-      <div class="tile is-ancestor">
-        <div class="tile is-parent">
-          <article class="tile is-child">
-          </article>
-        </div>
-        <div class="tile is-parent">
-          <article class="tile is-child">
-            <img src="{% static 'images/prez/pres_merci.png' %}" style="width: 100%; height:100%">
-          </article>
-        </div>
-        <div class="tile is-parent">
-          <article class="tile is-child">
-            <img src="{% static 'images/prez/pres_kiche.png' %}" style="width: 100%; height:100%">
-          </article>
-        </div>
-        <div class="tile is-parent">
-          <article class="tile is-child">
-          </article>
-        </div>
       </div>
     </div>
   </section>

@@ -165,10 +165,6 @@ section {
   }
 }
 
-.figure-container:hover img {
-  transform: scale(1.05);
-}
-
 figure {
   margin: 0;
   overflow: hidden;

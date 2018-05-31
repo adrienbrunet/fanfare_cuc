@@ -77,7 +77,7 @@ class People(models.Model):
     class Meta:
         verbose_name = "Personne"
         verbose_name_plural = "Personnes"
-        ordering = ('name', )
+        ordering = ('instrument', 'name', )
 
     def __str__(self):
         return self.name

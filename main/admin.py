@@ -2,15 +2,26 @@ from django import forms
 from django.contrib import admin
 from django.contrib.postgres.forms import SplitArrayField
 
-from import_export import resources
 from import_export.admin import ImportExportModelAdmin
 
 from .models import Event, People, QuestionPage, Track
 
 
-class BookResource(resources.ModelResource):
-    class Meta:
-        model = Event
+class EventAdmin(ImportExportModelAdmin):
+    list_display = (
+        '__str__', 'title', 'description', 'date', 'displayed_date',
+        'location', 'city', 'event_url'
+    )
+    list_editable = (
+        'title', 'description', 'date', 'displayed_date',
+        'location', 'city', 'event_url'
+    )
+    list_filter = ('date', 'location', 'city')
+
+
+class PeopleAdmin(admin.ModelAdmin):
+    list_display = ('__str__', 'get_instrument_display', 'is_dead', )
+    list_filter = ('instrument', 'is_dead', )
 
 
 class QuestionPageForm(forms.ModelForm):
@@ -36,19 +47,12 @@ class QuestionPageAdmin(admin.ModelAdmin):
     form = QuestionPageForm
 
 
-class EventAdmin(ImportExportModelAdmin):
-    list_display = (
-        '__str__', 'title', 'description', 'date', 'displayed_date',
-        'location', 'city', 'event_url'
-    )
-    list_editable = (
-        'title', 'description', 'date', 'displayed_date',
-        'location', 'city', 'event_url'
-    )
-    list_filter = ('date', 'location', 'city')
+class TrackAdmin(admin.ModelAdmin):
+    list_display = ('__str__', 'is_discarded', )
+    list_filter = ('is_discarded', )
 
 
 admin.site.register(Event, EventAdmin)
+admin.site.register(People, PeopleAdmin)
 admin.site.register(QuestionPage, QuestionPageAdmin)
-admin.site.register(People)
-admin.site.register(Track)
+admin.site.register(Track, TrackAdmin)

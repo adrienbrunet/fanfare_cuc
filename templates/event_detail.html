@@ -1,9 +1,0 @@
-{% extends "base.html" %}
-
-{% block content %}
-  <article>
-    <h1>{{ event.title }} · {{ event.date }} · {{ event.location }}</h1>
-    <pre>{{ event.description }}</pre>
-    <img src="{{ object.image }}" alt="Event image">
-  </article>
-{% endblock content %}

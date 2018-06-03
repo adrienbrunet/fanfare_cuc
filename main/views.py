@@ -1,13 +1,11 @@
-# coding: utf-8
-
-from datetime import date, datetime
 import random
 import pytz
+
+from datetime import date, datetime
 
 from django.shortcuts import get_object_or_404
 from django.views.generic.base import TemplateView
 from django.views.generic.list import ListView
-from django.views.generic import DetailView
 
 from .models import Event, QuestionPage, People, Track
 
@@ -53,11 +51,6 @@ class QuestionPageView(TemplateView):
 
 class EventListView(ListView):
     template_name = 'event_list.html'
-    model = Event
-
-
-class EventDetailView(DetailView):
-    template_name = 'event_detail.html'
     model = Event
 
 

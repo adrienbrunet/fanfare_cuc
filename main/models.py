@@ -13,6 +13,8 @@ class Track(models.Model):
     title = models.CharField(max_length=255)
     midi_file = models.FileField()
     is_discarded = models.BooleanField(default=False)
+    photo = models.ImageField(blank=True, null=True)
+    original_song_yt_link = models.URLField(blank=True, null=True)
 
     class Meta:
         ordering = ["title", ]
@@ -36,6 +38,11 @@ class QuestionPage(models.Model):
     answers_before = ArrayField(models.CharField(max_length=1024, blank=True))
     answers_expired = ArrayField(models.CharField(max_length=1024, blank=True))
 
+    class Meta:
+        ordering = ["start_date", ]
+        verbose_name = "page \"Est-ce que c'est bientôt...\""
+        verbose_name_plural = "pages \"Est-ce que c'est bientôt...\""
+
     def __str__(self):
         return self.slug
 
@@ -56,12 +63,11 @@ class Event(models.Model):
     location = models.CharField(max_length=255, blank=True)
     city = models.CharField(max_length=255, blank=True)
     event_url = models.URLField(blank=True, null=True)
-    image = models.ImageField(blank=True, null=True)
 
     class Meta:
         ordering = ('-date', )
-        verbose_name = 'Evenement'
-        verbose_name_plural = 'Evenements'
+        verbose_name = 'évenement'
+        verbose_name_plural = 'évenements'
 
     def __str__(self):
         return self.title
@@ -75,8 +81,8 @@ class People(models.Model):
     instrument = models.CharField(max_length=255, choices=INSTRUMENTS)
 
     class Meta:
-        verbose_name = "Personne"
-        verbose_name_plural = "Personnes"
+        verbose_name = "personne"
+        verbose_name_plural = "personnes"
         ordering = ('instrument', 'name', )
 
     def __str__(self):

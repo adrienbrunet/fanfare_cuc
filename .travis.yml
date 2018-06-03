@@ -1,21 +1,19 @@
 language: python
 
 python:
-  - "3.5"
-  - "3.5-dev" # 3.5 development branch
-  - "nightly" # currently points to 3.6-dev
+  - "3.6"
 
 env:
-  - DJANGO=1.9 MIGRATE='python manage.py migrate'
+  - DJANGO=2.0 MIGRATE='python manage.py migrate'
 
 # command to install dependencies
 install:
-  - pip install -r requirements.txt
+  - pip install -r requirements_current.txt
   - pip install -q Django==$DJANGO
 
 branches:
   only:
     - master
-  
+
 # command to run tests
-script: pushd . && $MIGRATE && python manage.py test && popd
+script: pushd . && $MIGRATE && pytest && popd

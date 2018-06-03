@@ -3,7 +3,7 @@ from datetime import datetime
 from django.test import TestCase
 from django.urls import reverse
 
-from ..models import Event, QuestionPage
+from ..models import QuestionPage
 
 
 class StaticPageTest(TestCase):
@@ -41,17 +41,5 @@ class StaticPageTest(TestCase):
 
     def test_events_list(self):
         url = reverse('events')
-        response = self.client.get(url)
-        assert response.status_code == 200
-
-    def test_event_detail(self):
-        event = Event(
-            title="foo",
-            description="foo",
-            date=datetime.now(),
-            location="bar"
-        )
-        event.save()
-        url = reverse('event_detail', kwargs={'pk': event.pk})
         response = self.client.get(url)
         assert response.status_code == 200

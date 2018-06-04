@@ -45,10 +45,11 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    'django.contrib.sitemaps',
+    'django.contrib.sitemaps',  # to handle our sitemaps
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.postgres',  # To use arrayField
     'main',
     'import_export',
 ]

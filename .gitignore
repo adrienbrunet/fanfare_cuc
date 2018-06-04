@@ -1,6 +1,7 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
+.pytest_cache/
 
 *.pyc
 
@@ -66,3 +67,5 @@ target/
 
 # Statics files
 static_prod/
+media/
+

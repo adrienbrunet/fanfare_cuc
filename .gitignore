@@ -63,3 +63,6 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# Statics files
+static_prod/

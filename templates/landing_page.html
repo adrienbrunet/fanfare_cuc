@@ -40,10 +40,10 @@
     <div class="container">
       <div class="columns">
         <div class="column">
-          <h1 class="title"><i class="fas fa-calendar"></i>&nbsp;Les prochains concerts</h1>
-          <h2 class="subtitle">
+          <h2 class="title"><i class="fas fa-calendar"></i>&nbsp;Les prochains concerts</h2>
+          <h3 class="subtitle">
             Venez nous voir en direct ! <u><a href="{% url 'events' %}">Voir toutes les dates</a></u>
-          </h2>
+          </h3>
           {% include "partials/events_for_landing.html" with events=events %}
         </div>
       </div>
@@ -54,10 +54,10 @@
   <div class="container">
     <div class="columns">
       <div class="column">
-        <h1 class="title leaning-white-background"><div class="leaning-dark-blue-content">Le jeu du CUC</div></h1>
-        <h2 class="subtitle has-text-white leaning-danger-background">
+        <h2 class="title leaning-white-background"><div class="leaning-dark-blue-content">Le jeu du CUC</div></h2>
+        <h3 class="subtitle has-text-white leaning-danger-background">
           <div class="leaning-white-content">Dans l'attente de <a class="has-text-white" href="{% url 'events' %}">nos concerts</a>, jouez au jeu du CUC !</div>
-        </h2>
+        </h3>
       </div>
       <div class="column">
       </div>

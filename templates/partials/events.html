@@ -1,6 +1,6 @@
 {% regroup events by date|date:"Y" as events_by_year %}
 {% for events_list in events_by_year %}
-  <h1 class="title has-text-white">{{ events_list.grouper }}</h1>
+  <h2 class="title has-text-white">{{ events_list.grouper }}</h2>
   {% for event in events_list.list %}
     <article class="has-text-white event-entry toggle-event" data-event-pk="{{ event.pk }}">
       <div>

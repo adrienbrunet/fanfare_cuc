@@ -1,6 +1,6 @@
 <div class="figure-container">
     <figure>
-        <img class="img-circle" src="{{ people.photo.url }}" alt="{{ people.name }}">
+        <img class="img-circle" src="{% if people.photo %}{{ people.photo.url }}{% endif %}" alt="{{ people.name }}">
         <figcaption class="has-text-white has-text-centered">
         <p class="is-size-3">{{ people.name }}</p>
         <p>{{ people.get_instrument_display }}</p>

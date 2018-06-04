@@ -15,8 +15,11 @@ def root(*dirs):
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 
-with open("secrets.json") as secret_file:
-    secrets = json.loads(secret_file.read())
+try:
+    with open("secrets.json") as secret_file:
+        secrets = json.loads(secret_file.read())
+except FileNotFoundError:
+    secrets = {"SECRET_KEY": "testing"}
 
 
 def get_secret(setting, secrets=secrets):

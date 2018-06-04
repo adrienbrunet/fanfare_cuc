@@ -180,7 +180,8 @@ figcaption {
 }
 
 .img-circle {
-  padding: 2rem;
+  padding: .2rem;
+  box-shadow: 1px 1px 3px black;
   border: none;
   max-width: 100%;
   height: auto;

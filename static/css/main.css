@@ -158,7 +158,7 @@ section {
 
 @media screen and (min-width: 50em) {
   .figure-container {
-    width: calc(20% - 3rem);
+    width: calc(20% - 10px);
   }
 
   .figure-container:nth-of-type(2n) {

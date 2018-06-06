@@ -1,4 +1,3 @@
-
 var Module;
 
 if (typeof Module === 'undefined') Module = {};

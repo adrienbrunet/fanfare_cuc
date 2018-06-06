@@ -12,11 +12,11 @@
       <div class="column">
         <h1 class="title">
           <span class="intro">
-            Fanfare CUC - Chaos par UpperCuite
+            Fanfare CUC - Chaos par UpperCuite - Fanfare Paris
           </span>
         </h1>
         <h2 class="subtitle">
-          Recrutez nous le coeur en fanfare !
+          Recrutez nous pour vos événements à Paris ou aux alentours !
         </h2>
 
         <h3>
@@ -75,45 +75,10 @@
 {% endblock content %}
 
 {% block extra_js %}
-  <script src="{% static 'js/jquery-1.11.1.min.js' %}" type="text/javascript"></script>
-  <script src="{% static 'js/jquery-ui-1.11.0/jquery-ui.min.js' %}" type="text/javascript"></script>
-  <script src="{% static 'js/wScratchPad.min.js' %}" type="text/javascript"></script>
-  <script src="{% static 'js/konami.min.js' %}" type="text/javascript"></script>
-  <script type="text/javascript">
-    $('#demo1').wScratchPad({
-      bg: "{% static 'images/transparent.png' %}",
-      fg: "{% static 'images/caca.png' %}",
-      cursor: 'url("{% static 'images/coin.png' %}") 20 20, default',
-      size: 50,
-      scratchMove: function (e, percent) {
-        if (percent > 20){
-          $('.scratchpad').wScratchPad('reset');
-          $('#scratch').hide();
-        }
-      }
-    });
-
-    $('#scratch').hide();
-    $( window ).konami({
-      cheat: function () {
-        $('#scratch').show();
-        $('.scratchpad').wScratchPad('reset');
-      }
-    });
-  </script>
-  <script type="text/javascript">
-    setTimeout(function () {
-      $('#logo_img').addClass('animated tada');
-    }, 3500);
-  </script>
+  <script type="text/javascript" src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/wScratchPad.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/konami.min.js' %}"></script>
   <script type="text/javascript" src="{% static 'js/typed.min.js' %}"></script>
-  <script>
-    $(function(){
-      $(".intro").typed({
-        strings: ["LA fanfare de Paris. ", "Le CUC ! &#x2665;&#x2665;"],
-        typeSpeed: 0
-      });
-    });
-  </script>
+  <script type="text/javascript" src="{% static 'js/landing_page.js' %}"></script>
   <script type="text/javascript" src="{% static 'js/events.js' %}"></script>
 {% endblock extra_js %}

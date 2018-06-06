@@ -1,17 +1,15 @@
 /**
  * All following scripts require jquery
  */
-$(function() {
-  // Handler for .ready() called.
-
+$( document ).ready(function () {
   /**
    * Scratchpad with poo
    * Require js libs: konami & wScratchPad
    */
   $('#demo1').wScratchPad({
-    bg: "{% static 'images/transparent.png' %}",
-    fg: "{% static 'images/caca.png' %}",
-    cursor: 'url("{% static 'images/coin.png' %}") 20 20, default',
+    bg: static_url + 'images/transparent.png',
+    fg: static_url + 'images/caca.png',
+    cursor: 'url("' + static_url + 'images/coin.png") 20 20, default',
     size: 50,
     scratchMove: function (e, percent) {
       if (percent > 20) {
@@ -38,7 +36,7 @@ $(function() {
    * Type animation on front banner
    * Require javascript lib: typed
    */
-  $(function(){
+  $(function () {
     $(".intro").typed({
       strings: ["LA fanfare de Paris. ", "Le CUC ! &#x2665;&#x2665;"],
       typeSpeed: 0

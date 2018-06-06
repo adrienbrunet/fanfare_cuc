@@ -75,6 +75,9 @@
 {% endblock content %}
 
 {% block extra_js %}
+  <script>
+    var static_url = "{% get_static_prefix %}";
+  </script>
   <script type="text/javascript" src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
   <script type="text/javascript" src="{% static 'js/wScratchPad.min.js' %}"></script>
   <script type="text/javascript" src="{% static 'js/konami.min.js' %}"></script>

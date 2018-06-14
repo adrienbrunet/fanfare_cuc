@@ -10,6 +10,16 @@ urlpatterns = [
         name='landing_page'
     ),
     path(
+        'fanfare-paris',
+        views.LandingPage.as_view(),
+        name='fanfare-paris'
+    ),
+    path(
+        'paris',
+        views.LandingPage.as_view(),
+        name='paris'
+    ),
+    path(
         'presentation/',
         views.PresentationView.as_view(),
         name="presentation"

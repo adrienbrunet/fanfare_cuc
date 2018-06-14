@@ -12,7 +12,9 @@ class StaticViewSitemap(Sitemap):
             'presentation',
             'setlist',
             'events',
-            'click-and-drag'
+            'click-and-drag',
+            'fanfare-paris',
+            'paris',
         ]
 
     def location(self, item):

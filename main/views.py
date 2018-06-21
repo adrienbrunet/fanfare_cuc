@@ -3,6 +3,7 @@ import random
 
 from datetime import date, datetime
 
+from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 from django.views.generic.base import TemplateView
 from django.views.generic.list import ListView
@@ -56,3 +57,10 @@ class EventListView(ListView):
 
 class ClickAndDragView(TemplateView):
     template_name = "click_and_drag.html"
+
+
+def aaa(request):
+    random_number = random.randint(1, 100000)
+    aaa = "A" * random_number
+    content = f"<p style='word-break: break-all;'>{aaa}</p>"
+    return HttpResponse(content)

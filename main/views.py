@@ -62,5 +62,5 @@ class ClickAndDragView(TemplateView):
 def aaa(request):
     random_number = random.randint(1, 100000)
     aaa = "A" * random_number
-    content = f"<p style='word-break: break-all;'>{aaa}</p>"
+    content = "<p style='word-break: break-all;'>{}</p>".format(aaa)
     return HttpResponse(content)

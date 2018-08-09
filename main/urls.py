@@ -1,9 +1,11 @@
 from django.urls import path, re_path
 
 from . import views
+from .admin import admin_site
 
 
 urlpatterns = [
+    path("admin/", admin_site.urls),
     path(
         '',
         views.LandingPage.as_view(),

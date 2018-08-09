@@ -1,4 +1,4 @@
-django<2.1
+Django==2.1
 psycopg2-binary
 pytest
 pytest-django

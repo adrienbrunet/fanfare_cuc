@@ -7,8 +7,10 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 from django.views.generic.base import TemplateView
 from django.views.generic.list import ListView
+from django.views.generic import CreateView
 
-from .models import Event, QuestionPage, People, Track
+from .forms import ApplicationForm
+from .models import Application, Event, QuestionPage, People, Track
 
 
 class LandingPage(TemplateView):
@@ -64,3 +66,14 @@ def aaa(request):
     aaa = "A" * random_number
     content = "<p style='word-break: break-all;'>{}</p>".format(aaa)
     return HttpResponse(content)
+
+
+class ApplicationView(CreateView):
+    model = Application
+    template_name = "application.html"
+    form_class = ApplicationForm
+    success_url = "candidature-success"
+
+
+class ApplicationSuccess(TemplateView):
+    template_name = "application-success.html"

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="hero is-small is-danger is-bold">
+    <div class="container hero-body">
+        <h1 class="title">Candidature <span class="fas fa-heart"></span></h1>
+    </div>
+</section>
+<section class="hero is-bold is-large">
+    <div class="container hero-body">
+        <form method="POST" style="color: white;">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input class="button is-primary" type="submit" value="ok">
+        </form>
+    </div>
+</section>
+{% endblock content %}

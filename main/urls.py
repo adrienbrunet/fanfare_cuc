@@ -55,5 +55,15 @@ urlpatterns = [
         'aaa',
         views.aaa,
         name="aaa"
+    ),
+    path(
+        'candidature',
+        views.ApplicationView.as_view(),
+        name="application"
+    ),
+    path(
+        'candidature-success',
+        views.ApplicationSuccess.as_view(),
+        name="application-success"
     )
 ]

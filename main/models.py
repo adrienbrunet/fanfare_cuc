@@ -87,3 +87,11 @@ class People(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Application(models.Model):
+    who = models.ForeignKey(People, verbose_name="who", on_delete=models.CASCADE)
+    what = models.CharField(max_length=255)
+
+    def __str__(self):
+        return "{} {}".format(self.who, self.what)

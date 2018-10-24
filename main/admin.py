@@ -7,20 +7,6 @@ from import_export.admin import ImportExportModelAdmin
 from .models import Event, People, QuestionPage, Track
 
 
-class MyAdminSite(admin.AdminSite):
-    # Text to put at the end of each page's <title>.
-    site_title = 'CUC admin'
-
-    # Text to put in each page's <h1> (and above login form).
-    site_header = 'CUC - Administration Zone'
-
-    # Text to put at the top of the admin index page.
-    index_title = 'Admin'
-
-
-admin_site = MyAdminSite()
-
-
 class EventAdmin(ImportExportModelAdmin):
     list_display = (
         '__str__', 'title', 'description', 'date', 'displayed_date',
@@ -66,7 +52,7 @@ class TrackAdmin(admin.ModelAdmin):
     list_filter = ('is_discarded', )
 
 
-admin_site.register(Event, EventAdmin)
-admin_site.register(People, PeopleAdmin)
-admin_site.register(QuestionPage, QuestionPageAdmin)
-admin_site.register(Track, TrackAdmin)
+admin.site.register(Event, EventAdmin)
+admin.site.register(People, PeopleAdmin)
+admin.site.register(QuestionPage, QuestionPageAdmin)
+admin.site.register(Track, TrackAdmin)

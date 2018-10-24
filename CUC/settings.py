@@ -42,7 +42,7 @@ ALLOWED_HOSTS = ['fanfare-cuc.fr', 'www.fanfare-cuc.fr', '127.0.0.1', ]
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
+    'CUC.apps.MyAdminConfig',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sitemaps',  # to handle our sitemaps

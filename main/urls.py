@@ -1,11 +1,10 @@
 from django.urls import path, re_path
 
+from CUC import admin
 from . import views
-from .admin import admin_site
-
 
 urlpatterns = [
-    path("admin/", admin_site.urls),
+    path("admin/", admin.site.urls),
     path(
         '',
         views.LandingPage.as_view(),

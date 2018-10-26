@@ -6,7 +6,7 @@
         {% spaceless %}
         <div class="inline-block-display skew-background front">
           <div class="unskew-content front"><span class="fas fa-plus icon-event-{{ event.pk }}"></span>&nbsp;<span class="has-text-weight-semibold">{% firstof event.displayed_date event.date|date:"l d F"|title %}</span></div></div>&nbsp;<span class="has-text-danger">{{ event.title }}</span>{% if event.location %}
-         · <span>{{ event.location }}{% endif %}{% if event.city  %} · {{ event.city }}{% endif %}{% if event.event_url %} <a href="{{ event.event_url }}" class="has-text-white"><span class="fas fa-external-link-alt has-text-danger"></span></a>{% endif %}</span>
+         · <span>{{ event.location }}{% endif %}{% if event.city  %} · {{ event.city }}{% endif %}{% if event.event_url %} <a href="{{ event.event_url }}" target="_blank" rel="noopener noreferrer" class="has-text-white"><span class="fas fa-external-link-alt has-text-danger"></span></a>{% endif %}</span>
         {% endspaceless %}
         <div class="hide-event-description know-more-{{ event.pk }}">
           {% if event.description %}

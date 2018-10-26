@@ -11,7 +11,7 @@
     <div class="container hero-body">
       {% spaceless %}
         {% for track in object_list %}
-          <div class="has-text-white skew-background setlist-elt {% cycle '' 'alternate-setlist-elt' %}"><div class="unskew-content {% cycle '' 'leaning-white-content' %}">{{ track.title }}</div></div>{% if not forloop.last %}<strong class="has-text-white">·</strong>{% endif %}
+          <div class="has-text-white skew-background setlist-elt {% cycle '' 'alternate-setlist-elt' %}"><div class="unskew-content {% cycle '' 'leaning-white-content' %}">{% if track.original_song_yt_link %}<a class="no-decoration" target="_blank" rel="noopener noreferrer" href="{{ track.original_song_yt_link }}">{{ track.title }}</a>{% else %}{{ track.title }}{% endif %}</div></div>{% if not forloop.last %}<strong class="has-text-white">·</strong>{% endif %}
         {% endfor %}
       {% endspaceless %}
     </div>
